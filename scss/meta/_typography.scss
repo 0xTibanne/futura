@@ -1,0 +1,55 @@
+@import "compass/typography";
+
+  $base-font-size:          12px          !global;
+  $base-font-family:          'Source Sans Pro'        !global;
+  $base-line-height:          18px          !global;
+  $rhythm-unit:             "rem"           !global;
+  $rem-with-px-fallback:        false           !global;
+  @include establish-baseline;
+
+@include breakpoint($screen-xs) {
+  $base-font-size:          14px          !global;
+  $base-font-family:          'Source Sans Pro'        !global;
+  $base-line-height:          21px          !global;
+  $rhythm-unit:             "rem"           !global;
+  $rem-with-px-fallback:        false           !global;
+  @include establish-baseline;
+}
+
+@include breakpoint($screen-sm) {
+  $base-font-size:          16px          !global;
+  $base-font-family:          'Source Sans Pro'        !global;
+  $base-line-height:          24px          !global;
+  $rhythm-unit:             "rem"           !global;
+  $rem-with-px-fallback:        false           !global;
+  $grid-background-baseline-color:  lighten(rgba(15, 13, 74, 0.4), 40%)   !global;
+  @include establish-baseline;
+}
+
+h1 { @include adjust-font-size-to(3.157rem); }
+h2 { @include adjust-font-size-to(2.369rem); }
+h3 { @include adjust-font-size-to(1.777rem);}
+h4 { @include adjust-font-size-to(1.333rem); }
+h5 { @include adjust-font-size-to(1rem); }
+h6 { @include adjust-font-size-to(0.75rem); }
+
+p {
+  @include adjust-font-size-to(0.8125rem);
+  @include hyphenation;
+  @include margin-trailer;
+}
+
+// Type weights
+
+%strong {
+  font-weight: 700;
+}
+%medium {
+  font-weight: 500;
+}
+%regular {
+  font-weight: 400;
+}
+%light {
+  font-weight: 300;
+}

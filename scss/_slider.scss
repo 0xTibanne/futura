@@ -1,0 +1,85 @@
+.slider {
+  margin-top: $header-height;
+  background: #2d251b;
+  position: relative;
+  height: rhythm(30);
+  width: 100%;
+  overflow: hidden;
+  z-index: 1; /* webkit blinking fix */
+
+  ul {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    height: 100%;
+    /* Clear fix */
+    *zoom: 1;
+    /**
+     * Prevent blinking issue
+     * Not tested. Experimental.
+     */
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+  }
+  .slide {
+    overflow: hidden;
+    display: block;
+    position: relative;
+    float: left;
+    height: 100%;
+    clear: none;
+    color: #FFF;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+
+    &__title {
+      @include margin-leader(2);
+      @include adjust-font-size-to(2.5rem, 2);
+      opacity: 0; // переделать тк не будет видно если не поддерживается animation
+
+    }
+    &__desc {
+      @include adjust-font-size-to(1.25rem, 2);
+      opacity: 0; // переделать тк не будет видно если не поддерживается animation
+      animation-delay: .2s;
+    }
+  }
+
+  // .slide1 {
+  //   background-image: url(/images/slide1.jpg);
+  // }
+  // .slide2 {
+  //   background-image: url(/images/slide2.jpg);
+  // }
+  // .slide3 {
+  //   background-image: url(/images/slide3.jpg);
+  // }
+
+  &__arrow {
+    position: absolute;
+    color: #929291;
+    display: block;
+    text-decoration: none;
+    margin-bottom: -20px;
+    font-size: 40px;
+    transition: all .2s ease-in-out;
+    &_right {
+      bottom: 50%;
+      right: 1rem;
+    }
+    &_left {
+      bottom: 50%;
+      left: 1rem;
+    }
+    &:hover {
+      color: #FFF;
+    }
+  }
+
+
+}

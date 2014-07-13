@@ -1,0 +1,28 @@
+@import 'base';
+
+// Base
+
+* {
+  @include box-sizing(border-box);
+}
+
+body {
+  background: $background-primary;
+  font-family: $base-font-family;
+  -webkit-font-smoothing: antialiased !important;
+  -webkit-backface-visibility: hidden;
+}
+
+.disable-hover,
+.disable-hover * {
+  pointer-events: none !important;
+}
+
+
+// Header
+
+@import 'header';
+
+// Slider
+
+@import 'slider';

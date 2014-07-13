@@ -1,0 +1,46 @@
+// Variables and mixins
+
+$brand-primary:         #428bca;
+$brand-success:         #5cb85c;
+$brand-info:            #5bc0de;
+$brand-warning:         #f0ad4e;
+$brand-danger:          #d9534f;
+
+
+$header-color: #595959;
+$footer-color: #5C5C5C;
+
+// Background colors
+
+$background-primary: #FFFFFF !global;
+$background-secondary: #F2F2F2 !global;
+$background-header: #1e1912 !global;
+
+// Core
+
+$header-height: 4.5rem !global;
+$footer-height: 7.5rem !global;
+
+// Colors
+
+$link-hover: #b0cd3b !global;
+$link-active: #b0cd3b !global;
+$link: #b0cd3b !global;
+
+// Responsive
+
+$screen-xs: 480px   !global;
+$screen-sm: 768px   !global;
+$screen-md: 992px   !global;
+$screen-lg: 1200px  !global;
+
+@import 'compass/reset';
+@import "compass/css3";
+@import 'breakpoint';
+@import 'susy';
+
+// Meta
+
+@import 'meta/typography';
+@import 'meta/fonts';
+@import 'meta/grid';

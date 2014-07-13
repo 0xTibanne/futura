@@ -1,0 +1,110 @@
+.header {
+  background: $background-header;
+  height: $header-height;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+.logo {
+  @include span(11);
+  @include adjust-font-size-to(1.125rem, 3);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFF;
+  strong {
+    font-weight: 600;
+  }
+  span {
+    @include adjust-font-size-to(1.5rem, 3);
+    &:nth-of-type(1) {
+      color: #4B5D3E;
+    }
+    &:nth-of-type(2) {
+      color: #FADFA6;
+    }
+    &:nth-of-type(3) {
+      color: #FF7D13;
+    }
+  }
+
+  // Breakpoints
+  @include breakpoint($screen-sm) {
+    @include span(4);
+  }
+}
+
+.menu {
+  @include pie-clearfix;
+
+  ul {
+    background: rgba(30,25,20, 0.8);
+    position: absolute;
+    display: none;
+    top: $header-height;
+    left: 0;
+    right: 0;
+  }
+  &__item {
+    @include adjust-font-size-to(1rem, 2);
+    display: block;
+    vertical-align: middle;
+    white-space: nowrap;
+    border-top: 1px solid #929291;
+    a {
+      text-decoration: none;
+      color: #929291;
+      display: block;
+      width: 100%;
+      height: 100%;
+      padding: 0 1rem;
+      transition: all .4s ease-in-out;
+
+      &:hover {
+        color: #FFF;
+      }
+    }
+  }
+
+  &__toggle {
+    @include span(1);
+    @include adjust-font-size-to(2rem, 3);
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    color: #717171;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+
+  //  Breakpoint
+
+  @include breakpoint($screen-sm) {
+    @include span(8);
+    text-align: right;
+
+    ul {
+      display: block !important;
+      background: transparent;
+      position: static;
+    }
+
+    &__item {
+      @include adjust-font-size-to(1rem, 3);
+      padding-left: 20px;
+      display: inline-block;
+      border: none;
+      a {
+        padding: 0;
+      }
+    }
+
+    &__toggle {
+      display: none;
+    }
+  }
+}
