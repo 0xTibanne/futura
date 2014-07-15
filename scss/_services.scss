@@ -1,0 +1,117 @@
+.services {
+  @include padding-leader(3);
+  @include padding-trailer(1);
+  
+}
+.service {
+
+  @include padding-leader;
+  padding-bottom: calc(1.5rem - 1px);
+  width: full;
+  margin: 0 gutter;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-bottom: 1px solid #CECECE;
+  transition: background .3s ease-in-out;
+  
+  &:hover {
+    background: #fbeee3;
+  }
+  
+  &__icon {
+    height: rhythm(4);
+    display: block;
+  }
+  
+  &:nth-of-type(1) {
+    .service__icon {
+      background: url(../images/services/email.png) no-repeat center bottom;
+    }
+  }
+  &:nth-of-type(2) {
+    .service__icon {
+      background: url(../images/services/briefcase.png) no-repeat center bottom;
+    }
+  }
+  &:nth-of-type(3) {
+    .service__icon {
+      background: url(../images/services/map.png) no-repeat center bottom;
+    }
+  }
+  &:nth-of-type(4) {
+    .service__icon {
+      background: url(../images/services/cloud.png) no-repeat center bottom;
+    }
+  }
+  &:nth-of-type(5) {
+    .service__icon {
+      background: url(../images/services/rocket.png) no-repeat center bottom;
+    }
+  }
+  &:nth-of-type(6) {
+    .service__icon {
+      background: url(../images/services/web.png) no-repeat center bottom;
+    }
+  }
+  
+  &:last-of-type {
+    border-bottom-color: transparent;
+  }
+  
+  &__title {
+    @include adjust-font-size-to(1.5rem, 2);
+    color: $title-color;
+    padding: 0 1rem;
+  }
+  
+  &__description {
+    @include adjust-font-size-to(1rem);
+    @include margin-trailer;
+    color: $text-color;
+    padding: 0 1rem;
+  }
+
+  
+  // Breakpoints
+  
+  @include breakpoint($screen-sm) {
+
+    width: 50%;
+    float: left;
+    margin: 0;
+    
+    &:nth-of-type(even) {
+      border-left: 1px  solid #CECECE;
+    }
+    
+    &:nth-of-type(odd) {
+      @include break;
+    }
+    
+    &:nth-last-of-type(2) {
+      border-bottom-color: transparent;
+    }
+
+  }
+  
+  @include breakpoint($screen-md) {
+
+    width: 33.3333%;
+    
+    &:nth-of-type(odd) {
+      @include nobreak;
+      border-left: 1px  solid #CECECE;
+    }
+    
+    &:nth-of-type(3n+1) {
+      @include break;
+      border-left-color: transparent;
+    }
+    
+    &:nth-last-of-type(3) {
+      border-bottom-color: transparent;
+    }
+
+  }
+}
