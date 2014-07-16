@@ -1,0 +1,93 @@
+.article {
+  @include pie-clearfix;
+  @include rhythm-padding;
+
+  &__title {
+    @include span(full);
+    @include margin-trailer;
+    @include adjust-font-size-to(1.875rem, 2);
+    color: $title-color;
+
+    &_right {
+      text-align: right;
+    }
+  }
+  &__content {
+    @include span(full);
+    @include margin-trailer;
+    color: $text-color;
+    p:last-of-type {
+      @include margin-trailer;
+    }
+  }
+  &__image {
+    @include span(full);
+    text-align: center;
+
+    img {
+      max-width: 49%;
+    }
+  }
+  &__video {
+    @include span(full);
+    @include margin-trailer;
+    text-align: center;
+  }
+
+  &__button {
+    @include button(#A4A4A4, #BDBCBC, #5d6d51);
+    @extend %light;
+    @include margin-trailer;
+  }
+
+  // Breakpoints
+
+  @include breakpoint($screen-sm) {
+    &__content {
+      width: span(6);
+    }
+    &__image,
+    &__video {
+      width: span(6);
+    }
+    &__video {
+      .iframe {
+        width: 95%;
+        padding-bottom: 53.4375%;
+      }
+    }
+    // &__button {
+      //   width: span(3 of 6);
+      // &:first-of-type {
+      //   margin-right: gutter(6)*2;
+      // }
+      // &:last-of-type {
+      //   width: span(full);
+      //   margin-right: 0;
+      // }
+    // }
+  }
+
+  @include breakpoint($screen-md) {
+    // &__button {
+    //   width: span(2 of 6);
+    //   &:last-of-type {
+    //     margin-right: 0;
+    //     width: span(2 of 6);
+    //   }
+    // }
+  }
+
+  // @include breakpoint($screen-md) {
+  //   &__content {
+  //     width: span(7);
+  //   }
+  //   &__image,
+  //   &__video {
+  //     width: span(5);
+  //   }
+  //   &__button {
+  //     width: span(6);
+  //   }
+  // }
+}

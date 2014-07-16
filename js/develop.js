@@ -27,17 +27,19 @@ $(function() {
       $slideButtonRight = $('.slide__button_right'),
       $slideImage = $('.slide img');
 
-  $slideTitle.first().addClass('fadeInUp');
-  $slideDesc.first().addClass('fadeInUp'),
-  $slideButtonLeft.first().addClass('fadeInLeft'),
-  $slideButtonRight.first().addClass('fadeInRight'),
-  $slideImage.first().addClass('fadeInUp');
+
 
   // Animation slide title
 
   var titleEffectIn = 'fadeInUp',
-      buttonLeftEffectIn = 'fadeInLeft',
-      buttonRightEffectIn= 'fadeInRight';
+      buttonLeftEffectIn = 'fadeIn',
+      buttonRightEffectIn= 'fadeIn';
+
+      // $slideTitle.first().addClass('fadeInUp');
+      // $slideDesc.first().addClass('fadeInUp'),
+      // $slideButtonLeft.first().addClass('fadeInLeft'),
+      // $slideButtonRight.first().addClass('fadeInRight'),
+      // $slideImage.first().addClass('fadeInUp');
 
 
   $slider.glide({
@@ -73,7 +75,7 @@ $(function() {
 
   function setEqualHeight(columns) {
     var tallestcolumn = 0;
-        
+
     columns.removeAttr('style');
 
     columns.each(function() {
@@ -88,7 +90,7 @@ $(function() {
   }
 
   setEqualHeight($(".service"));
-  
+
   $(window).resize(function() {
     setEqualHeight($(".service"));
   });
@@ -145,5 +147,19 @@ $(function() {
       return false;
     });
   }
+
+  // Keep the rhythm
+
+  $(window).load(function() {
+    if ( $(window).width() >= 769) {
+      $('.article__video').keepTheRhythm({ baseline: 24 });
+    }
+    if ( $(window).width() >= 481 ) {
+      $('.article__video').keepTheRhythm({ baseline: 21 });
+    }
+    if ( $(window).width() <=479 ) {
+      $('.article__video').keepTheRhythm({ baseline: 18 });
+    }
+  });
 
 });

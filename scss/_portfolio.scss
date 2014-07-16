@@ -1,0 +1,114 @@
+.portfolio {
+  @include pie-clearfix;
+  background: url(../images/bg_portfolio.jpg) no-repeat top center;
+  background-size: cover;
+
+  &__content {
+    @include margin-trailer(2);
+  }
+
+  &__title {
+    @include adjust-font-size-to(1.875rem, 3);
+    color: #FFF;
+    text-align: center;
+    text-transform: uppercase;
+    background: rgba(30,25,20, 0.8);
+  }
+
+  &__filter {
+    @include margin-leader(2);
+    @include margin-trailer(2);
+    text-align: center;
+
+    a {
+      @include adjust-font-size-to(1.125rem);
+      height: 3rem;
+      line-height: calc(3rem - 4px);
+      display: inline-block;
+      padding: 0 1rem;
+      margin: 0 .5rem;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all .3s ease-in-out;
+      color: #FFF;
+
+      &:hover,
+      &.selected {
+        border-color: #FFF;
+      }
+    }
+  }
+
+  &__thumbnail {
+    @include span(full);
+    margin-bottom: gutter()*2;
+    border-radius: 5px;
+    position: relative;
+    // overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+
+    img {
+      transition: all .3s ease-in-out;
+      border-radius: 5px;
+      display: block;
+    }
+
+    &:hover {
+
+      a {
+        opacity: 1;
+      }
+
+      img {
+        opacity: 0;
+        // transform: scale(0);
+      }
+    }
+
+    figcaption {
+      text-align: center;
+      // backface-visibility: hidden;
+      a {
+        border: 2px solid #FFF;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        color: #FFF;
+        text-decoration: none;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+      }
+      h3 {
+        @include margin-leader(4);
+        @extend %light;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+      }
+      p {
+        position: relative;
+        font-size: 1.125rem;
+      }
+    }
+  }
+
+  // Breakpoints
+
+  @include breakpoint($screen-sm) {
+    &__thumbnail {
+      @include span(6);
+    }
+  }
+
+  @include breakpoint($screen-md) {
+    &__thumbnail {
+      @include span(4);
+    }
+  }
+}

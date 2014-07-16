@@ -1,0 +1,78 @@
+.footer {
+  background: url(../images/bg_footer.jpg) no-repeat top center;
+  background-size: cover;
+  text-align: center;
+  color: #FFF;
+
+  &__title {
+    @extend .portfolio__title;
+  }
+
+  &__subtitle {
+    @include adjust-font-size-to(1.5rem);
+    @include margin-leader(4);
+    @include margin-trailer(1);
+    text-transform: uppercase;
+  }
+
+  &__social {
+    @include adjust-font-size-to(1.5rem);
+    @include button(#FFF, #FFF, #929291);
+    margin: 0 .5rem;
+    padding: 0;
+    width: 3rem;
+
+    &:hover {
+      color: #929291;
+      background: transparent;
+    }
+  }
+
+  &__text {
+    @include adjust-font-size-to(1rem);
+    @include margin-leader(1);
+    @include margin-trailer(1);
+    @extend %light;
+  }
+
+  &__input {
+    @include adjust-font-size-to(1rem);
+    @include margin-trailer(1);
+    @include appearance(none);
+    @include input-placeholder {
+      color: #FFF;
+    }
+    background: #7E6A53;
+    border-radius: 5px;
+    padding: 0 1rem;
+    border: 2px solid #7E6A53;
+    display: inline-block;
+    width: span(8);
+    height: 3rem;
+  }
+
+  &__submit {
+    @include margin-trailer(4);
+    @include button(#FFF, #7E6A53, #FF7D13);
+    @include adjust-font-size-to(1.25rem);
+    @include appearance(none);
+    display: inline-block;
+    background: transparent;
+  }
+
+  &__copyright {
+    @include adjust-font-size-to(1rem);
+    @include leading-border(1px, 1, 16px, solid #17130E);
+    @include padding-trailer(1);
+    @extend %light;
+
+    a {
+      color: #FFF;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

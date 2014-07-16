@@ -1,0 +1,19 @@
+@mixin button($text-color, $border-color, $hover-color) {
+  text-decoration: none;
+  text-align: center;
+  color: $text-color;
+  border: 2px solid $border-color;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  line-height: calc(3rem - 4px);
+  height: 3rem;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: #FFF;
+    background: $hover-color;
+    border: 2px solid $hover-color;
+  }
+}

@@ -40,13 +40,37 @@
     &__title {
       @include margin-leader(2);
       @include adjust-font-size-to(2.5rem, 2);
-      opacity: 0; // переделать тк не будет видно если не поддерживается animation
 
     }
     &__desc {
       @include adjust-font-size-to(1.25rem, 2);
-      opacity: 0; // переделать тк не будет видно если не поддерживается animation
+      @include margin-trailer;
       animation-delay: .2s;
+    }
+    &__button {
+      font-size: 1.125rem;
+      line-height: calc(3rem - 4px);
+      text-decoration: none;
+      color: #FFF;
+      border: 2px solid #FFF;
+      border-radius: 5px;
+      display: inline-block;
+      transition: all .3s ease-in-out;
+      padding: 0 1rem;
+      margin: 0 .5rem;
+      animation-delay: 1s;
+
+      &:hover {
+        background: #FF7D13;
+        border: 2px solid #FF7D13;
+      }
+    }
+    img {
+      @include margin-leader(3);
+      max-width: 90%;
+      position: relative;
+      bottom: 0;
+      animation-delay: .5s;
     }
   }
 
@@ -61,20 +85,21 @@
   // }
 
   &__arrow {
+    @include adjust-font-size-to(2rem);
     position: absolute;
     color: #929291;
     display: block;
     text-decoration: none;
     margin-bottom: -20px;
-    font-size: 40px;
-    transition: all .2s ease-in-out;
+    transition: color .2s ease-in-out;
+
     &_right {
       bottom: 50%;
-      right: 1rem;
+      right: .5rem;
     }
     &_left {
       bottom: 50%;
-      left: 1rem;
+      left: .5rem;
     }
     &:hover {
       color: #FFF;

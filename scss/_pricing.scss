@@ -1,0 +1,105 @@
+.pricing {
+  @include pie-clearfix;
+  @include padding-leader(2);
+  @include padding-trailer(2);
+
+  &__title {
+    @extend .article__title;
+    @include margin-trailer(3);
+    text-align: center;
+  }
+
+  .table {
+    @include span(full);
+    @include margin-trailer(1);
+    border: 1px solid #D6D6D6;
+    border-radius: 5px;
+    color: #7B7B7B;
+    text-align: center;
+
+    &__header {
+      @include padding-leader;
+      @include padding-trailer;
+      background: #E3E3E3;
+
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    &__details {
+      @include padding-leader;
+      @include padding-trailer;
+      li {
+        @include adjust-font-size-to(1em, 3);
+        @extend %light;
+      }
+    }
+
+    &__title {
+      font-size: 4.375rem;
+      sup {
+        font-size: 2rem;
+        vertical-align: top;
+      }
+    }
+
+    &__button {
+      @include button(#7B7B7B, #E3E3E3 ,#FF7D13);
+      @include margin-trailer(1);
+      font-size: 1rem;
+    }
+
+    &_basic {
+      border: 2px solid #FF7D13;
+
+      .table__header {
+        background: #FF7D13;
+        color: #FFF;
+        span {
+          font-size: 1.5rem;
+        }
+      }
+
+      .table__title {
+        @include adjust-font-size-to(5rem, 3);
+        sup {
+          font-size: 2rem;
+          vertical-align: top;
+        }
+      }
+
+      .table__details {
+        li {
+          @include adjust-font-size-to(1.125rem, 3);
+        }
+      }
+
+      .table__button {
+        @include button(#FF7D13, #FF7D13, #FF7D13);
+        @include margin-trailer(2);
+        font-size: 1.125rem;
+      }
+
+    }
+
+
+    // Breakpoints
+
+    @include breakpoint($screen-sm) {
+
+      @include span(4);
+
+      &_basic {
+
+        @include margin-leader(-1);
+
+        }
+
+    }
+
+  }
+
+
+
+}

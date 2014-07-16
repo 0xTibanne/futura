@@ -34,11 +34,9 @@ h5 { @include adjust-font-size-to(1rem); }
 h6 { @include adjust-font-size-to(0.75rem); }
 
 p {
-  @include adjust-font-size-to(0.8125rem);
+  @include adjust-font-size-to(1rem, 1);
   @include hyphenation;
-  @include margin-trailer;
 }
-
 // Type weights
 
 %strong {

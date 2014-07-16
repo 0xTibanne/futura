@@ -65,6 +65,7 @@ module.exports = function(grunt) {
           'bower_components/jquery-waypoints/waypoints.js',
           'bower_components/glidejs/dist/jquery.glide.js',
           'bower_components/isotope/dist/isotope.pkgd.js',
+          'js/jquery.keeptherhythm.js',
           'js/develop.js'
         ],
         dest: 'js/app.js'
