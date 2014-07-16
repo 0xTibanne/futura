@@ -48,16 +48,11 @@
       animation-delay: .2s;
     }
     &__button {
+      @include button(#FFF, #FFF, #FF7D13);
+      @include margin-trailer(1);
+      margin-left: .5rem;
+      margin-right: .5rem;
       font-size: 1.125rem;
-      line-height: calc(3rem - 4px);
-      text-decoration: none;
-      color: #FFF;
-      border: 2px solid #FFF;
-      border-radius: 5px;
-      display: inline-block;
-      transition: all .3s ease-in-out;
-      padding: 0 1rem;
-      margin: 0 .5rem;
       animation-delay: 1s;
 
       &:hover {
